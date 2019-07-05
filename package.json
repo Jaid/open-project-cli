@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "webpackConfigJaid": "cli",
+  "version": "0.1.0",
+  "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
+  "dependencies": {
+    "@babel/runtime": "^7.5.0",
+    "execa": "^2.0.3",
+    "open": "^6.4.0",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {
+    "acorn": "^6.2.0",
+    "ajv": "^6.10.0",
+    "babel-jest": "^24.8.0",
+    "babel-preset-jaid": "^6.8.1",
+    "caniuse-lite": "^1.0.30000979",
+    "coffee": "^5.2.1",
+    "eslint": "^6.0.1",
+    "eslint-config-jaid": "^1.18.0",
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3",
+    "webpack-config-jaid": "^5.20.2"
+  },
+  "scripts": {
+    "clean": "rimraf dist/",
+    "babel:prod": "rimraf dist/transpiled/production && NODE_ENV=production babel --out-dir dist/transpiled/production --source-maps true src",
+    "babel:dev": "rimraf dist/transpiled/development && NODE_ENV=development babel --out-dir dist/transpiled/development src",
+    "babel:test": "rimraf dist/transpiled/test && NODE_ENV=test babel --out-dir dist/transpiled/test src",
+    "build:prod": "NODE_ENV=production webpack",
+    "build:dev": "NODE_ENV=development webpack",
+    "test": "npm run build:prod && NODE_ENV=production MAIN=$(npx find-by-extension-cli js --fullPath --cwd dist/package/production) jest --runInBand",
+    "test:coverage": "npm run test:dev -- --coverage --json --outputFile=dist/jest/stats.json",
+    "test:dev": "npm run build:dev && NODE_ENV=test MAIN=$(npx find-by-extension-cli js --fullPath --cwd dist/package/development) jest --runInBand",
+    "test:debug": "DEBUG=\"$DEBUG:$(basename $PWD),$(basename $PWD):*\" NODE_ENV=test node --inspect=9229 node_modules/jest/bin/jest.js --runInBand"
+  }
+}
