@@ -4,9 +4,18 @@
   "version": "0.1.0",
   "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
   "dependencies": {
+    "@absolunet/fsp": "^1.6.1",
     "@babel/runtime": "^7.5.0",
+    "@octokit/rest": "^16.28.2",
+    "ensure-array": "^1.0.0",
+    "essential-config": "^3.0.1",
     "execa": "^2.0.3",
+    "jaid-logger": "^1.4.0",
+    "lodash": "^4.17.11",
+    "npm-check-updates": "^3.1.13",
     "open": "^6.4.0",
+    "simple-git": "^1.118.0",
+    "which-promise": "^1.0.0",
     "yargs": "^13.2.4"
   },
   "devDependencies": {
