@@ -11,6 +11,7 @@ import config from "lib/config"
 import logger from "lib/logger"
 import ensureArray from "ensure-array"
 import ms from "ms.macro"
+import {isString} from "lodash"
 
 let github
 try {
@@ -27,9 +28,12 @@ try {
   logger.error("GitHub API client creation failed: %s", error)
 }
 
+/**
+ * @param {Argv} argv
+ */
 const getProjectFolder = async ({githubUser, projectName}) => {
-  const ownProjectsFolder = ensureArray(config.ownProjectsFolder)
-  for (const projectsFolder of ownProjectsFolder) {
+  const ownProjectsFolders = ensureArray(config.ownProjectsFolder)
+  for (const projectsFolder of ownProjectsFolders) {
     const folder = path.resolve(projectsFolder, projectName)
     const folderExists = await fsp.pathExists(folder)
     if (folderExists) {
@@ -44,8 +48,8 @@ const getProjectFolder = async ({githubUser, projectName}) => {
       }
     }
   }
-  const foreignProjectsFolder = ensureArray(config.foreignProjectsFolder)
-  for (const projectsFolder of foreignProjectsFolder) {
+  const foreignProjectsFolders = ensureArray(config.foreignProjectsFolder)
+  for (const projectsFolder of foreignProjectsFolders) {
     const folder = path.join(projectsFolder, projectName)
     const folderExists = await fsp.pathExists(folder)
     if (folderExists) {
@@ -69,10 +73,14 @@ const getProjectFolder = async ({githubUser, projectName}) => {
   })
   const matchedRepository = response.data.find(repository => repository.name.toLowerCase() === projectName.toLowerCase())
   if (!matchedRepository) {
-    logger.info("No repository named %s found. Searched in %s", projectName, [...ownProjectsFolder, ...foreignProjectsFolder, `${response.data.length} repos`].join(", "))
+    logger.info("No repository named %s found. Searched in %s", projectName, [...ownProjectsFolders, ...foreignProjectsFolders, `${response.data.length} repos`].join(", "))
     return
   }
-  const targetFolder = path.join(ownProjectsFolder, matchedRepository.name)
+  if (!isString(ownProjectsFolders[0])) {
+    logger.error("config.ownProjectsFolder must contain at least one directory")
+    process.exit(1)
+  }
+  const targetFolder = path.join(ownProjectsFolders[0], matchedRepository.name)
   await simpleGit().clone(matchedRepository.ssh_url, targetFolder)
   return {
     name: matchedRepository.name,
@@ -84,6 +92,14 @@ const getProjectFolder = async ({githubUser, projectName}) => {
   }
 }
 
+/**
+ * @typedef Argv
+ * @prop {string} githubUser
+ */
+
+/**
+ * @param {Argv} argv
+ */
 const job = async ({npmPath, codePath, githubUser, projectName}) => {
   const project = await getProjectFolder({
     githubUser,
