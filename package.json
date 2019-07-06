@@ -10,6 +10,7 @@
     "ensure-array": "^1.0.0",
     "essential-config": "^3.0.1",
     "execa": "^2.0.3",
+    "is-git-repo-dirty": "^1.0.0",
     "jaid-logger": "^1.4.0",
     "lodash": "^4.17.11",
     "npm-check-updates": "^3.1.14",

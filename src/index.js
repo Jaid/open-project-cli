@@ -12,6 +12,7 @@ import logger from "lib/logger"
 import ensureArray from "ensure-array"
 import ms from "ms.macro"
 import {isString} from "lodash"
+import isGitRepoDirty from "is-git-repo-dirty"
 
 let github
 try {
@@ -112,12 +113,10 @@ const job = async ({npmPath, codePath, githubUser, projectName}) => {
   const packageFile = path.join(project.folder, "package.json")
   const isNodePackage = await fsp.pathExists(packageFile)
   let repository
-  let status
   let isDirty
   if (isGitRepository) {
     repository = simpleGit(project.folder)
-    status = await repository.status()
-    isDirty = status.files?.length > 0
+    isDirty = await isGitRepoDirty(project.folder)
   } else {
     project.shouldPull = false
     project.shouldPush = false
@@ -146,8 +145,7 @@ const job = async ({npmPath, codePath, githubUser, projectName}) => {
       },
     })
     if (isGitRepository && !isDirty) {
-      const newStatus = await repository.status()
-      const isDirtyNow = newStatus.files?.length > 0
+      const isDirtyNow = await isGitRepoDirty(project.folder)
       if (isDirtyNow) {
         await repository.add(project.folder)
         const commitMessage = "Automatically run `npm install`"
