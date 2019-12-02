@@ -45,5 +45,6 @@
     "test:debug": "DEBUG=\"$DEBUG:$(basename $PWD),$(basename $PWD):*\" NODE_ENV=test node --inspect=9229 node_modules/jest/bin/jest.js --runInBand",
     "prepareActionJest": "npm run build:prod"
   },
-  "name": "open-project-cli"
+  "name": "open-project-cli",
+  "description": "Very opinionated CLI tool that opens project folders in VSCode."
 }
