@@ -1,7 +1,6 @@
-import path from "path"
-
 import coffee from "coffee"
 import ms from "ms.macro"
+import path from "path"
 
 const main = path.resolve(process.env.MAIN)
 
