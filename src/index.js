@@ -136,7 +136,7 @@ const job = async ({npmPath, codePath, githubUser, projectName}) => {
     logger.info("Pulling")
     await repository.pull()
   }
-  if (project.shouldNpmInstall) {
+  if (config.upgrade && project.shouldNpmInstall) {
     logger.info("Installing dependencies")
     await execa(npmPath, ["install"], {
       cwd: project.folder,
