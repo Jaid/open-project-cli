@@ -1,6 +1,6 @@
 {
   "webpackConfigJaid": "cli",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
   "dependencies": {
     "@absolunet/fsp": "^1.6.2",
