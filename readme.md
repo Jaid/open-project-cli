@@ -6,11 +6,11 @@ Very opinionated CLI tool that opens project folders in VSCode.
 ## Installation
 <a href='https://npmjs.com/package/open-project-cli'><img alt='npm logo' src='https://github.com/Jaid/action-readme/raw/master/images/base-assets/npm.png'/></a>
 ```bash
-npm install --global open-project-cli@^2.1.1
+npm install --global open-project-cli@^2.1.2
 ```
 <a href='https://yarnpkg.com/package/open-project-cli'><img alt='Yarn logo' src='https://github.com/Jaid/action-readme/raw/master/images/base-assets/yarn.png'/></a>
 ```bash
-yarn global add open-project-cli@^2.1.1
+yarn global add open-project-cli@^2.1.2
 ```
 
 
