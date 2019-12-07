@@ -43,7 +43,7 @@ const getProjectFolder = async ({githubUser, projectName}) => {
         folder,
         name: projectName,
         shouldPull: true,
-        shouldNpmInstall: true,
+        shouldNpmInstall: config.alwaysNpmInstall,
         shouldUpgrade: true,
         shouldPush: true,
       }
@@ -59,7 +59,7 @@ const getProjectFolder = async ({githubUser, projectName}) => {
         folder,
         name: projectName,
         shouldPull: true,
-        shouldNpmInstall: true,
+        shouldNpmInstall: config.alwaysNpmInstall,
         shouldUpgrade: false,
         shouldPush: false,
       }
