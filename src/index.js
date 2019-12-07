@@ -1,18 +1,18 @@
-import path from "path"
-
-import yargs from "yargs"
 import fsp from "@absolunet/fsp"
-import execa from "execa"
-import simpleGit from "simple-git/promise"
 import Octokit from "@octokit/rest"
+import ensureArray from "ensure-array"
+import execa from "execa"
+import isGitRepoDirty from "is-git-repo-dirty"
+import {isString} from "lodash"
+import ms from "ms.macro"
 import npmCheckUpdates from "npm-check-updates"
+import path from "path"
+import simpleGit from "simple-git/promise"
 import whichPromise from "which-promise"
+import yargs from "yargs"
+
 import config from "lib/config"
 import logger from "lib/logger"
-import ensureArray from "ensure-array"
-import ms from "ms.macro"
-import {isString} from "lodash"
-import isGitRepoDirty from "is-git-repo-dirty"
 
 let github
 try {

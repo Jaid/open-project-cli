@@ -1,4 +1,5 @@
 import essentialConfig from "essential-config"
+
 import logger from "lib/logger"
 
 import defaults from "./defaults.yml"
