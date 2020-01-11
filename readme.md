@@ -1,63 +1,79 @@
 # open-project-cli
 
 
-Very opinionated CLI tool that opens project folders in VSCode.
+<a href="https://raw.githubusercontent.com/Jaid/open-project-cli/master/license.txt"><img src="https://img.shields.io/github/license/Jaid/open-project-cli?style=flat-square" alt="License"/></a>  
+<a href="https://actions-badge.atrox.dev/Jaid/open-project-cli/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2FJaid%2Fopen-project-cli%2Fbadge" alt="Build status"/></a> <a href="https://github.com/Jaid/open-project-cli/commits"><img src="https://img.shields.io/github/commits-since/Jaid/open-project-cli/v3.0.0?style=flat-square&logo=github" alt="Commits since v3.0.0"/></a> <a href="https://github.com/Jaid/open-project-cli/commits"><img src="https://img.shields.io/github/last-commit/Jaid/open-project-cli?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/Jaid/open-project-cli/issues"><img src="https://img.shields.io/github/issues/Jaid/open-project-cli?style=flat-square&logo=github" alt="Issues"/></a>  
+<a href="https://npmjs.com/package/open-project-cli"><img src="https://img.shields.io/npm/v/open-project-cli?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/Jaid/open-project-cli/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/open-project-cli?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/open-project-cli"><img src="https://img.shields.io/npm/dm/open-project-cli?style=flat-square&logo=npm" alt="Downloads"/></a>
+
+**CLI tool that opens project folders in VSCode. Does a little preparation routine.**
+
+#### Opinionated
+
+This project is tailored to my personal needs and workflows and therefore highly opinionated. Feel free to use it or get inspired by it, but please do not get frustrated if you come across weird features or have difficulties integrating it in your own ecosystem.
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Installation
-<a href='https://npmjs.com/package/open-project-cli'><img alt='npm logo' src='https://github.com/Jaid/action-readme/raw/master/images/base-assets/npm.png'/></a>
+<a href="https://npmjs.com/package/open-project-cli"><img src="https://img.shields.io/badge/npm-open--project--cli-C23039?style=flat-square&logo=npm" alt="open-project-cli on npm"/></a>
 ```bash
-npm install --global open-project-cli@^2.1.2
+npm install --global open-project-cli@^3.0.0
 ```
-<a href='https://yarnpkg.com/package/open-project-cli'><img alt='Yarn logo' src='https://github.com/Jaid/action-readme/raw/master/images/base-assets/yarn.png'/></a>
+<a href="https://yarnpkg.com/package/open-project-cli"><img src="https://img.shields.io/badge/Yarn-open--project--cli-2F8CB7?style=flat-square&logo=yarn&logoColor=white" alt="open-project-cli on Yarn"/></a>
 ```bash
-yarn global add open-project-cli@^2.1.2
+yarn global add open-project-cli@^3.0.0
 ```
 
 
 
-## Documentation
-## Functions
 
-<dl>
-<dt><a href="#getProjectFolder">getProjectFolder(argv)</a></dt>
-<dd></dd>
-<dt><a href="#job">job(argv)</a></dt>
-<dd></dd>
-</dl>
+## CLI Usage
+After installing package `open-project-cli` globally, you can use its command line interface.
+```bash
+open-project-cli epoch-seconds
+```
+For usage instructions:
+```bash
+open-project-cli --help
+```
 
-## Typedefs
 
-<dl>
-<dt><a href="#Argv">Argv</a></dt>
-<dd></dd>
-</dl>
 
-**Kind**: global function  
 
-| Param | Type |
-| --- | --- |
-| argv | [<code>Argv</code>](#Argv) | 
+## Development
 
-**Kind**: global function  
 
-| Param | Type |
-| --- | --- |
-| argv | [<code>Argv</code>](#Argv) | 
 
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| githubUser | <code>string</code> | 
-
+Setting up:
+```bash
+git clone git@github.com:Jaid/open-project-cli.git
+cd open-project-cli
+npm install
+```
+Testing:
+```bash
+npm run test:dev
+```
+Testing in production environment:
+```bash
+npm run test
+```
 
 
 ## License
 ```text
 MIT License
 
-Copyright © 2019, Jaid <jaid.jsx@gmail.com> (github.com/jaid)
+Copyright © 2020, Jaid <jaid.jsx@gmail.com> (github.com/jaid)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
