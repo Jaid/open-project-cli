@@ -46,5 +46,5 @@
     "prepareActionJest": "npm run build:prod"
   },
   "name": "open-project-cli",
-  "description": "Very opinionated CLI tool that opens project folders in VSCode."
+  "description": "CLI tool that opens project folders in VSCode. Does a little preparation routine."
 }

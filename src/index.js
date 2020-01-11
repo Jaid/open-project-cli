@@ -213,9 +213,9 @@ const main = async () => {
     },
   }
   yargs
-    .scriptName("open-project")
+    .scriptName(_PKG_NAME)
     .version(_PKG_VERSION)
-    .command("$0 <projectName>", "Opens a project folder in VSCode", builder, job).argv
+    .command("$0 <projectName>", _PKG_DESCRIPTION, builder, job).argv
 }
 
 main()
