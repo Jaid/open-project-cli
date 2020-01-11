@@ -1,1 +1,3 @@
 installation: global
+personal: true
+binExample: open-project-cli epoch-seconds
