@@ -23,6 +23,7 @@ This project is tailored to my personal needs and workflows and therefore highly
 
 
 
+
 ## Installation
 <a href="https://npmjs.com/package/open-project-cli"><img src="https://img.shields.io/badge/npm-open--project--cli-C23039?style=flat-square&logo=npm" alt="open-project-cli on npm"/></a>
 ```bash
