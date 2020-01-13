@@ -1,9 +1,9 @@
 # open-project-cli
 
 
-<a href="https://raw.githubusercontent.com/Jaid/open-project-cli/master/license.txt"><img src="https://img.shields.io/github/license/Jaid/open-project-cli?style=flat-square" alt="License"/></a>  
-<a href="https://actions-badge.atrox.dev/Jaid/open-project-cli/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2FJaid%2Fopen-project-cli%2Fbadge" alt="Build status"/></a> <a href="https://github.com/Jaid/open-project-cli/commits"><img src="https://img.shields.io/github/commits-since/Jaid/open-project-cli/v4.0.0?style=flat-square&logo=github" alt="Commits since v4.0.0"/></a> <a href="https://github.com/Jaid/open-project-cli/commits"><img src="https://img.shields.io/github/last-commit/Jaid/open-project-cli?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/Jaid/open-project-cli/issues"><img src="https://img.shields.io/github/issues/Jaid/open-project-cli?style=flat-square&logo=github" alt="Issues"/></a>  
-<a href="https://npmjs.com/package/open-project-cli"><img src="https://img.shields.io/npm/v/open-project-cli?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/Jaid/open-project-cli/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/open-project-cli?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/open-project-cli"><img src="https://img.shields.io/npm/dm/open-project-cli?style=flat-square&logo=npm" alt="Downloads"/></a>
+<a href="https://raw.githubusercontent.com/jaid/open-project-cli/master/license.txt"><img src="https://img.shields.io/github/license/jaid/open-project-cli?style=flat-square" alt="License"/></a> <a href="https://github.com/sponsors/jaid"><img src="https://img.shields.io/badge/<3-Sponsor-FF45F1?style=flat-square" alt="Sponsor open-project-cli"/></a>
+<a href="https://actions-badge.atrox.dev/jaid/open-project-cli/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2Fjaid%2Fopen-project-cli%2Fbadge" alt="Build status"/></a> <a href="https://github.com/jaid/open-project-cli/commits"><img src="https://img.shields.io/github/commits-since/jaid/open-project-cli/v4.0.0?style=flat-square&logo=github" alt="Commits since v4.0.0"/></a> <a href="https://github.com/jaid/open-project-cli/commits"><img src="https://img.shields.io/github/last-commit/jaid/open-project-cli?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/jaid/open-project-cli/issues"><img src="https://img.shields.io/github/issues/jaid/open-project-cli?style=flat-square&logo=github" alt="Issues"/></a>  
+<a href="https://npmjs.com/package/open-project-cli"><img src="https://img.shields.io/npm/v/open-project-cli?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/jaid/open-project-cli/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/open-project-cli?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/open-project-cli"><img src="https://img.shields.io/npm/dm/open-project-cli?style=flat-square&logo=npm" alt="Downloads"/></a>
 
 **CLI tool that opens project folders in VSCode. Does a little preparation routine.**
 
@@ -36,7 +36,6 @@ yarn global add open-project-cli@^4.0.0
 
 
 
-
 ## CLI Usage
 After installing package `open-project-cli` globally, you can use its command line interface.
 ```bash
@@ -56,7 +55,7 @@ open-project-cli --help
 
 Setting up:
 ```bash
-git clone git@github.com:Jaid/open-project-cli.git
+git clone git@github.com:jaid/open-project-cli.git
 cd open-project-cli
 npm install
 ```
