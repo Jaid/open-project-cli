@@ -47,5 +47,9 @@
   },
   "name": "open-project-cli",
   "description": "CLI tool that opens project folders in VSCode. Does a little preparation routine.",
-  "funding": "https://github.com/sponsors/jaid"
+  "funding": "https://github.com/sponsors/jaid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaid/open-project-cli"
+  }
 }
