@@ -52,5 +52,13 @@
     "url": "https://github.com/jaid/open-project-cli"
   },
   "homepage": "https://github.com/Jaid/open-project-cli",
-  "keywords": []
+  "keywords": [
+    "automation",
+    "cli",
+    "git",
+    "personal",
+    "proeject-management",
+    "project",
+    "tool"
+  ]
 }
