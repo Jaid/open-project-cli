@@ -213,9 +213,9 @@ const main = async () => {
     },
   }
   yargs
-    .scriptName(_PKG_NAME)
-    .version(_PKG_VERSION)
-    .command("$0 <projectName>", _PKG_DESCRIPTION, builder, job).argv
+    .scriptName(process.env.REPLACE_PKG_NAME)
+    .version(process.env.REPLACE_PKG_VERSION)
+    .command("$0 <projectName>", process.env.REPLACE_PKG_DESCRIPTION, builder, job).argv
 }
 
 main()

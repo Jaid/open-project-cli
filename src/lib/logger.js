@@ -1,8 +1,8 @@
 import jaidLogger from "jaid-logger"
 
-const logger = jaidLogger(_PKG_TITLE)
+const logger = jaidLogger(process.env.REPLACE_PKG_TITLE)
 
-logger.info(`${_PKG_TITLE} v${_PKG_VERSION}`)
+logger.info(`${process.env.REPLACE_PKG_TITLE} v${process.env.REPLACE_PKG_VERSION}`)
 
 export const log = logger.info
 export default logger
