@@ -40,9 +40,11 @@
     "build:dev": "NODE_ENV=development webpack",
     "test": "npm run build:prod && NODE_ENV=production MAIN=$(npx find-by-extension-cli js --fullPath --cwd dist/package/production) jest --runInBand --passWithNoTests",
     "test:coverage": "npm run test:dev -- --coverage --json --outputFile=dist/jest/stats.json",
-    "test:dev": "npm run build:dev && NODE_ENV=test MAIN=$(npx find-by-extension-cli js --fullPath --cwd dist/package/development) jest --runInBand",
     "test:debug": "DEBUG=\"$DEBUG:$(basename $PWD),$(basename $PWD):*\" NODE_ENV=test node --inspect=9229 node_modules/jest/bin/jest.js --runInBand",
-    "prepareActionJest": "npm run build:prod"
+    "prepareActionJest": "npm run build:prod",
+    "start": "npm run build:dev && NODE_ENV=development node dist/package/development/cli.js",
+    "test:dev": "npm run build:dev && NODE_ENV=test MAIN=dist/package/development/cli.js jest",
+    "debug": "npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/cli.js jest --colors --runInBand --detectOpenHandles"
   },
   "name": "open-project-cli",
   "description": "Very opinionated CLI tool that opens project folders in VSCode.",
