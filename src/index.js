@@ -1,4 +1,5 @@
 import fsp from "@absolunet/fsp"
+import {createOAuthAppAuth} from "@octokit/auth"
 import {Octokit} from "@octokit/rest"
 import ensureArray from "ensure-array"
 import execa from "execa"
@@ -15,19 +16,6 @@ import config from "lib/config"
 import logger from "lib/logger"
 
 let github
-try {
-  github = new Octokit({
-    auth: {
-      clientId: config.githubClientId,
-      clientSecret: config.githubClientSecret,
-    },
-  })
-  logger.info("Authenticated for Octokit")
-} catch (error) {
-  github = new Octokit
-  logger.warn("Could not create a GitHub API client with auth options")
-  logger.error("GitHub API client creation failed: %s", error)
-}
 
 /**
  * @param {Argv} argv
@@ -194,6 +182,16 @@ const job = async ({npmPath, codePath, githubUser, projectName}) => {
 }
 
 const main = async () => {
+  try {
+    github = new Octokit({
+      auth: process.env.GITHUB_TOKEN,
+    })
+    logger.info("Authenticated for Octokit")
+  } catch (error) {
+    github = new Octokit
+    logger.warn("Could not create a GitHub API client with auth options")
+    logger.error("GitHub API client creation failed: %s", error)
+  }
   const [codePath, npmPath] = await Promise.all([
     whichPromise("code"),
     whichPromise("npm"),

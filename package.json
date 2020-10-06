@@ -4,6 +4,7 @@
   "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
   "dependencies": {
     "@absolunet/fsp": "^1.6.2",
+    "@octokit/auth": "^2.0.0",
     "@octokit/rest": "^18.0.6",
     "ensure-array": "^1.0.0",
     "essential-config": "^4.0.2",
