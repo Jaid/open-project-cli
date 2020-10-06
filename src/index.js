@@ -1,5 +1,5 @@
 import fsp from "@absolunet/fsp"
-import Octokit from "@octokit/rest"
+import {Octokit} from "@octokit/rest"
 import ensureArray from "ensure-array"
 import execa from "execa"
 import isGitRepoDirty from "is-git-repo-dirty"
