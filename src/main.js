@@ -2,6 +2,7 @@ import fsp from "@absolunet/fsp"
 import {Octokit} from "@octokit/rest"
 import ensureArray from "ensure-array"
 import execa from "execa"
+import {isEmpty} from "has-content"
 import isGitRepoDirty from "is-git-repo-dirty"
 import {isString} from "lodash"
 import ms from "ms.macro"
@@ -93,6 +94,17 @@ const getProjectFolder = async ({githubUser, projectName, github}) => {
  * @return {import("@octokit/rest").Octokit}
  */
 function getGithub() {
+  return new Octokit
+}
+
+/**
+ * @return {import("@octokit/rest").Octokit}
+ */
+function getAuthenticatedGithub() {
+  if (isEmpty(config.githubToken)) {
+    logger.warn("config.githubToken is not set")
+    return getGithub()
+  }
   try {
     const github = new Octokit({
       auth: config.githubToken,
@@ -100,10 +112,9 @@ function getGithub() {
     logger.info("Authenticated for Octokit")
     return github
   } catch (error) {
-    const github = new Octokit
     logger.warn("Could not create a GitHub API client with auth options")
     logger.error("GitHub API client creation failed: %s", error)
-    return github
+    return getGithub()
   }
 }
 
@@ -112,7 +123,7 @@ function getGithub() {
  * @return {Promise<void>}
  */
 export default async ({npmPath, codePath, githubUser, projectName}) => {
-  const github = getGithub()
+  const github = getAuthenticatedGithub()
   const project = await getProjectFolder({
     npmPath,
     codePath,
