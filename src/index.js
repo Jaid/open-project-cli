@@ -30,7 +30,7 @@ const main = async () => {
   yargs
     .scriptName(process.env.REPLACE_PKG_NAME)
     .version(process.env.REPLACE_PKG_VERSION)
-    .command("* <projectFolder>", process.env.REPLACE_PKG_DESCRIPTION, commandBuilder, handleCommand)
+    .command("* <projectName>", process.env.REPLACE_PKG_DESCRIPTION, commandBuilder, handleCommand)
     .parse()
 }
 
