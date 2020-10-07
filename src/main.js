@@ -95,7 +95,7 @@ const getProjectFolder = async ({githubUser, projectName, github}) => {
 function getGithub() {
   try {
     const github = new Octokit({
-      auth: process.env.GITHUB_TOKEN,
+      auth: config.githubToken,
     })
     logger.info("Authenticated for Octokit")
     return github
