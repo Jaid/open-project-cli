@@ -30,6 +30,7 @@
     "eslint-config-jaid": "^1.49.0",
     "jest": "^26.5.2",
     "rimraf": "^3.0.2",
+    "tsconfig-jaid": "^2.1.0",
     "webpack-config-jaid": "^11.13.0"
   },
   "scripts": {
