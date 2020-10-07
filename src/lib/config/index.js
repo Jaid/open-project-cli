@@ -6,10 +6,7 @@ import defaults from "./defaults.yml"
 
 const config = essentialConfig(process.env.REPLACE_PKG_TITLE, {
   defaults,
-  secretKeys: [
-    "githubClientId",
-    "githubClientSecret",
-  ],
+  secretKeys: ["githubToken"],
 })
 
 if (!config) {

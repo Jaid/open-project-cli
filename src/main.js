@@ -90,21 +90,29 @@ const getProjectFolder = async ({githubUser, projectName, github}) => {
 }
 
 /**
+ * @return {import("@octokit/rest").Octokit}
+ */
+function getGithub() {
+  try {
+    const github = new Octokit({
+      auth: process.env.GITHUB_TOKEN,
+    })
+    logger.info("Authenticated for Octokit")
+    return github
+  } catch (error) {
+    const github = new Octokit
+    logger.warn("Could not create a GitHub API client with auth options")
+    logger.error("GitHub API client creation failed: %s", error)
+    return github
+  }
+}
+
+/**
  * @param {import("yargs").Arguments<Argv>} argv
  * @return {Promise<void>}
  */
 export default async ({npmPath, codePath, githubUser, projectName}) => {
-  let github
-  try {
-    github = new Octokit({
-      auth: process.env.GITHUB_TOKEN,
-    })
-    logger.info("Authenticated for Octokit")
-  } catch (error) {
-    github = new Octokit
-    logger.warn("Could not create a GitHub API client with auth options")
-    logger.error("GitHub API client creation failed: %s", error)
-  }
+  const github = getGithub()
   const project = await getProjectFolder({
     npmPath,
     codePath,
