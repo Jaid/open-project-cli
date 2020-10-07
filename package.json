@@ -21,14 +21,14 @@
   "devDependencies": {
     "acorn": "^8.0.3",
     "ajv": "^6.12.5",
-    "babel-jest": "^26.5.0",
+    "babel-jest": "^26.5.2",
     "babel-preset-jaid": "^9.0.0",
     "browserslist-config-jaid-node": "^3.0.0",
-    "caniuse-lite": "^1.0.30001143",
+    "caniuse-lite": "^1.0.30001144",
     "coffee": "^5.4.0",
     "eslint": "^7.10.0",
     "eslint-config-jaid": "^1.49.0",
-    "jest": "^26.5.0",
+    "jest": "^26.5.2",
     "rimraf": "^3.0.2",
     "webpack-config-jaid": "^11.13.0"
   },
