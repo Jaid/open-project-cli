@@ -15,7 +15,7 @@
     "lodash": "^4.17.20",
     "npm-check-updates": "^9.0.4",
     "open": "^7.3.0",
-    "simple-git": "^2.20.1",
+    "simple-git": "^3.16.0",
     "which-promise": "^1.0.0",
     "yargs": "^16.0.3"
   },
